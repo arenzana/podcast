@@ -18,6 +18,7 @@ import (
 // - Title
 // - Description
 // - Enclosure (HREF, Type and Length all required)
+// - IEpisode (iTunes episode number)
 //
 // Recommendations:
 // - Setting the minimal fields sets most of other fields, including iTunes.
@@ -41,6 +42,7 @@ type Item struct {
 
 	// https://help.apple.com/itc/podcasts_connect/#/itcb54353390
 	IAuthor            string `xml:"itunes:author,omitempty"`
+		IEpisode            int `xml:"itunes:episode"`
 	ISubtitle          string `xml:"itunes:subtitle,omitempty"`
 	ISummary           *ISummary
 	IImage             *IImage
