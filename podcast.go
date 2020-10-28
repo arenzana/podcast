@@ -68,10 +68,10 @@ func New(title, link, description string,
 		Title:         title,
 		Link:          link,
 		Description:   description,
-		Generator:     fmt.Sprintf("go podcast v%s (github.com/eduncan911/podcast)", pVersion),
+		Generator:     fmt.Sprintf("feeder v%s (gitlab.com/iarenzana/feeder)", pVersion),
 		PubDate:       parseDateRFC1123Z(pubDate),
 		LastBuildDate: parseDateRFC1123Z(lastBuildDate),
-		Language:      "en-us",
+		Language:      "es-es",
 		IType: "episodic",
 		// setup dependency (could inject later)
 		encode: encoder,
@@ -467,8 +467,9 @@ var parseAuthorNameEmail = func(a *Author) string {
 	var author string
 	if a != nil {
 		author = a.Email
+
 		if len(a.Name) > 0 {
-			author = fmt.Sprintf("%s (%s)", a.Email, a.Name)
+			author = fmt.Sprintf("%s", a.Name)
 		}
 	}
 	return author
