@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/eduncan911/podcast"
+	"github.com/arenzana/podcast"
 	"github.com/stretchr/testify/assert"
 )
 

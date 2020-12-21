@@ -36,6 +36,7 @@ type Podcast struct {
 	SkipDays       string   `xml:"skipDays,omitempty"`
 	TTL            int      `xml:"ttl,omitempty"`
 	WebMaster      string   `xml:"webMaster,omitempty"`
+	Email          string   `xml:"email,omitempty"`
 	Image          *Image
 	TextInput      *TextInput
 	AtomLink       *AtomLink
@@ -52,8 +53,8 @@ type Podcast struct {
 	INewFeedURL string  `xml:"itunes:new-feed-url,omitempty"`
 	IOwner      *Author // Author is formatted for itunes as-is
 	ICategories []*ICategory
-	IType string `xml:"itunes:type,omitempty"`
-	Items []*Item
+	IType       string `xml:"itunes:type,omitempty"`
+	Items       []*Item
 
 	encode func(w io.Writer, o interface{}) error
 }
@@ -72,7 +73,7 @@ func New(title, link, description string,
 		PubDate:       parseDateRFC1123Z(pubDate),
 		LastBuildDate: parseDateRFC1123Z(lastBuildDate),
 		Language:      "es-es",
-		IType: "episodic",
+		IType:         "episodic",
 		// setup dependency (could inject later)
 		encode: encoder,
 	}
@@ -331,9 +332,9 @@ func (p *Podcast) AddItem(i Item) (int, error) {
 
 	//if episode number is not passed; we will just increase the items by one
 	if i.IEpisode == 0 && p.IType == "episodic" {
-		i.IEpisode = len(p.Items) + 1 
+		i.IEpisode = len(p.Items) + 1
 	}
-	
+
 	return len(p.Items), nil
 }
 
@@ -393,7 +394,7 @@ func (p *Podcast) AddIType(iType string) {
 	if len(iType) == 0 {
 		return
 	}
-	
+
 	if iType == "serial" {
 		p.IType = "serial"
 		return
