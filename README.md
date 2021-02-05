@@ -1,9 +1,3 @@
-[![GoDoc](https://godoc.org/github.com/arenzana/podcast?status.svg)](https://godoc.org/github.com/arenzana/podcast)
-[![Build Status](https://github.com/arenzana/podcast/workflows/go-cicd/badge.svg)](https://github.com/arenzana/podcast/actions?workflow=go-cicd)
-[![Coverage Status](https://coveralls.io/repos/github/arenzana/podcast/badge.svg?branch=master)](https://coveralls.io/github/arenzana/podcast?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/arenzana/podcast)](https://goreportcard.com/report/github.com/arenzana/podcast)
-[![MIT License](https://img.shields.io/npm/l/mediaelement.svg)](https://arenzana.mit-license.org/)
-
 # podcast
 Package podcast generates a fully compliant iTunes and RSS 2.0 podcast feed
 for GoLang using a simple API.
